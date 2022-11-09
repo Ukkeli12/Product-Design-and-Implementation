@@ -6,7 +6,7 @@
 <style>
     h1 {text-align: left;}
     p {text-align: left;}
-    button {text-align: center;}
+    button {text-align: left;}
 </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
 <button style="position: left;top:5px;" type="button">Kirjaudu</button> 
 <button style="position: left;top:5px;" type="button">Rekisteröidy</button> 
 
-<form style="position: left;top:5px;" action = "">
+<form style="position: relative; left:0px; top:20px;" action = "">
     <label for "Etunimi">Etunimi: </label>
     <input type="text" id="Etunimi" name="Etunimi"><br><br>
     <label for "Sukunimi">Sukunimi: </label>
@@ -34,11 +34,18 @@
     <input type="submit" value="Lähetä">
 </form>
 
-<form style="position: left;top:20px;" action = "">
+
+
+
+<form style="position: relative; left:0 ;top:30px;" action = "">
     <label for "Haku">Haku: </label>
     <input type="text" id="Haku" name="Haku"><br><br>
     <input type="submit" value="Hae">
 </form>
+
+
+<p style="position: relative; left:0px; top:20px;">Arvioitu aika:</p>
+
 
 <p style="position: absolute; bottom: 5px">Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
 
