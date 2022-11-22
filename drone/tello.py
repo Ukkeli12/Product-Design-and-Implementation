@@ -15,6 +15,7 @@ class S(BaseHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length) # <--- Gets the data itself
         self._set_response()
+        print(post_data)
         parse(post_data)
 
 def run(server_class=HTTPServer, handler_class=S, port=8080):
@@ -30,8 +31,7 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
     logging.info('Stopping httpd...\n')
 
 def parse(x):
-    y = json.loads(x)
-    if (y["c"] == "takeoff"):
+    if (b'takeoff' in x):
         tello = Tello()
         tello.connect()
         tello.takeoff()
