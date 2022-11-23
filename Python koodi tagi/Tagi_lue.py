@@ -41,6 +41,7 @@ def sulje_komento_sulje_sarjaportti(): #Sulkee sarjaportin
     ser.close()
 
 if __name__ == '__main__':
+    sleep(1)
     while 1:
         #print("Anna komento:\n1 Avaa sarjaportti\n2 Tulostus päälle\n3 Sulje sarjaportti yhteys\nHUOM! Paina q jos haluat sulkea sarjaportti tulostuksen")
         match str(input("Anna komento:\n1 Tulostus päälle\n2 Sulje sarjaportti yhteys\nHUOM! Paina Q halutessasi sulkea sarjaportti tulostuksen\n")):
