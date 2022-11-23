@@ -5,7 +5,8 @@ from serial import Serial #Sarjaportti kirjasto
 from redis import Redis #Redis kirjasto raspberry pi:lle
 
 r = Redis(host='localhost', port=6379, db=0)
-ser = Serial('COM14',115200) #Sarjaportin määrittäminen
+#ser = Serial('COM14',115200) #Sarjaportin määrittäminen
+ser = Serial('/dev/ttyACM0',115200) #Sarjaportin määrittäminen
 
 def lue_komentoja_tulostus(): #Tulostaa sarjaporttiin
     ser.write('\r\r'.encode())

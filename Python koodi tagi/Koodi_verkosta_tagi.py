@@ -5,6 +5,7 @@ import redis
 
 r = redis.Redis(host='localhost', port=6379, db=0)
 DWM = serial.Serial(port="COM14", baudrate=115200)
+#DWM = serial.Serial(port="/dev/ttyACM0", baudrate=115200)
 print("Connected to " + DWM.name)
 DWM.write("\r\r".encode())
 print("Encode")
