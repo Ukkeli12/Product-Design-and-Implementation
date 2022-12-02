@@ -3,6 +3,7 @@
 <head>
     <link href="style.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
 </head>
 <body>     
 	<div>
@@ -13,16 +14,16 @@
 	      		<a href="#Kirjaudu">Kirjaudu</a>
 	      		<a href="#Rekisteröidy">Rekisteröidy</a>
 	    	</div>
-	    
+			    
 	    	<div style="padding-left:16px">
 			<center>
 	      			<h2>droneprojekti</h2>
 				<h3>testaa tilata itelles paketti tästä</h3>
 			</center>
 	    	</div>
-
+		
 	    	<center>
-			<form action="0.0.0.0" method="POST">
+			<form action="http://193.167.101.41:8080" method="POST" enctype="application/x-www-form-urlencoded">
 		  		<p>
 		    			<label for="a">Etunimi</label>
 		    			<input id="a" type="text">
@@ -36,6 +37,15 @@
 		    			<input id="b" type="text">
 		  		</p> 
 		  		<p>
+				        <select id="selCountry">
+						<option selected value="">Choose where to ship your product</option>
+						<option value="ShippingA">Shipping for A</option>
+						<option value="ShippingB">Shippinp for B</option>
+						<option value="ShippingC">Shipping for C</option>
+					</select>
+
+
+
 		    			<label for="b">Postinumero</label>
 		    			<input id="b" type="text"> 
 		  		</p>
@@ -46,11 +56,10 @@
 			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
 		</div>
 	
-		<form action="http://0.0.0.0:8000" method="POST" enctype="application/x-www-form-urlencoded">
+		<form action="http://193.167.101.41:8080" method="post" enctype="application/x-www-form-urlencoded">
 			<input type="text" name="c"/>
 			<input type="submit" value="send"/> 
 		</form>
-
 	</div>
 
 
