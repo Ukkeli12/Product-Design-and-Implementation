@@ -24,7 +24,7 @@
 	    	</div>
 		
 	    	<center>
-			<form action="http://193.167.101.43:8080" method="POST" enctype="application/x-www-form-urlencoded">
+		<!--	<form action="http://193.167.101.43:8080" method="POST" enctype="application/x-www-form-urlencoded">
 		  		<p>
 		    			<label for="a">Etunimi</label>
 		    			<input id="a" type="text">
@@ -60,7 +60,13 @@
 		<form action="http://193.167.101.43:8080" method="post" enctype="application/x-www-form-urlencoded">
 			<input type="text" name="c"/>
 			<input type="submit" value="send"/> 
+			vanha <input type="button" id="script" name="submit" value="Run Script">
 		</form>
+		--!>
+		<form action="http://193.167.101.43/script" method="POST">
+			<input type="submit" value="Foobar">
+		</form>
+
 		{% endblock %}
 	</div>
 
