@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Droneberry</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='droneberry.ico') }}">
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='/css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="#" />
+    <!--<link rel="shortcut icon" href="#" /> --!>
 </head>
 <body>     
 	<div>
@@ -19,8 +21,8 @@
 		{% block content %}   
 	    	<div style="padding-left:16px">
 			<center>
-	      			<h2>droneprojekti</h2>
-				<h3>testaa tilata itelles paketti tästä</h3>
+	      			<h2>DroneBerry</h2>
+				<h3>Kuljettaa paketin kuin paketin luoksesi</h3>
 			</center>
 	    	</div>
 		
@@ -57,25 +59,23 @@
 		<div class="alapalkki">
 			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
 		</div>
-	
-		<form action="http://193.167.101.43:8080" method="post" enctype="application/x-www-form-urlencoded">
-			<input type="text" name="c"/>
-			<input type="submit" value="send"/> 
-			vanha <input type="button" id="script" name="submit" value="Run Script">
-		</form>
 		--!>
+		<form method="POST" enctype=multipart/form-data>
+			<input type=file name=file>
+			<button class="submitti" type=submit style="vertical-align:middle"><span>Upload!</span></button>
+			<!--<input class="submitti" type=submit value=Upload>--!>
+		</form>
+		
 		<form action="http://193.167.101.43/script" method="POST">
-			<input type="submit" value="Foobar">
+			<input type="submit" value="Tilaa Kuljetus">
 		</form>
 		<form action="http://193.167.101.43/emergency" method="POST">
-			<input type="submit" value="foofoo">
+			<input type="submit" value="HÄTÄSEIS!">
 		</form>
 		{% endblock %}
-		<center>
-			<div class="alapalkki">
-				<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
-			</div>
-		</center>
+		<footer class="footer">
+			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>	
+		</footer>
 	</div>
 
 
