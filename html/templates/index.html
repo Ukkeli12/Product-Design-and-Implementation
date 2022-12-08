@@ -9,17 +9,28 @@
     <!--<link rel="shortcut icon" href="#" /> --!>
 </head>
 <body>     
-	<div>
+	<div class="content">
+		<nav class="navMenu">
+			<a href="/">Home</a>
+			<a href="#">Test</a>
+			<a href="#">About</a>
+			<a href="#">Group</a>
+			<div class="dot"></div>
+		</nav>
+
+		<!--
 		<div class="topnav">
 			<a class="active" href="/">Home</a>
 			<a href="/about">About</a>
+			--!>
 			<!--
 	      		<a href="#Kirjaudu">Kirjaudu</a>
 	      		<a href="#Rekisteröidy">Rekisteröidy</a>
 			--!>
+				
 	    	</div>
 		{% block content %}   
-	    	<div style="padding-left:16px">
+	    	<div class="titteli">
 			<center>
 	      			<h2>DroneBerry</h2>
 				<h3>Kuljettaa paketin kuin paketin luoksesi</h3>
@@ -60,23 +71,27 @@
 			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
 		</div>
 		--!>
+		<!--
 		<form method="POST" enctype=multipart/form-data>
 			<input type=file name=file>
 			<button class="submitti" type=submit style="vertical-align:middle"><span>Upload!</span></button>
 			<!--<input class="submitti" type=submit value=Upload>--!>
 		</form>
-		
+
 		<form action="http://193.167.101.43/script" method="POST">
 			<button class="submitti" type=submit style="vertical-align:middle"><span>Tilaa Kuljetus!</span></button>
 			<!--<input type="submit" value="Tilaa Kuljetus">--!>
 		</form>
 		<form action="http://193.167.101.43/emergency" method="POST">
-			<input type="submit" value="HÄTÄSEIS!">
+			<button class="submitti" type=submit style="vertical-align:middle"><span>HÄTÄSEIS</span></button>
+			<!--<input type="submit" value="HÄTÄSEIS!">--!>
 		</form>
 		{% endblock %}
+		<!--
 		<footer class="footer">
 			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>	
 		</footer>
+		--!>
 	</div>
 
 
