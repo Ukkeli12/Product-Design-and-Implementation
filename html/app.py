@@ -3,6 +3,9 @@ from flask import render_template
 
 from werkzeug.utils import secure_filename
 
+import numpy
+from stl import mesh
+
 import os
 import requests
 
@@ -57,6 +60,27 @@ def emergency():
 @app.route("/about")
 def about():
     return render_template("projektista.html")
+
+@app.route('/object.stl')
+def stl_gen(n=1):
+    # tetrahedron mesh
+    data = numpy.zeros(4, dtype=mesh.Mesh.dtype)
+    b1,b2,b3,t = (1,0,1),(0,0,-0.75),(-1,0,1),(0,1,0)
+    data['vectors'][0] = numpy.array([b1,b2,b3])
+    data['vectors'][1] = numpy.array([b1,b2,t])
+    data['vectors'][2] = numpy.array([b2,b3,t])
+    data['vectors'][3] = numpy.array([b3,b1,t])
+    object_mesh = mesh.Mesh(data, remove_empty_areas=False)
+
+    # numpy-stl does a poor job of being "API" ready.. 
+    # needs a generic string-ready .write method
+    # (great opportunity for an open source contribution!)
+    # for now we use a file-like object, BytesIO, to fake it out
+    output = BytesIO()    
+    object_mesh._write_ascii(output,"object.stl")
+    response = make_response(output.getvalue())
+    return response
+
 
 # Palvelimen käynnistys :
 # sudo systemctl restart nginx , jos muokannut nginx asetuksia
