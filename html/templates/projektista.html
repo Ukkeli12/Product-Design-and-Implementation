@@ -1,19 +1,23 @@
 {% extends "index.html" %}
 {% block content %}
-<div class="center">
+<div class="osio1">
 	<div class="center">
 		<center>
 			<h1 class="headerteksti">DroneBerry, vähän projektista</h1>
 			<p class="teksti">Projektin ideana on toteuttaa paketinkuljettaja drone.</p>
-			<p class="teksti">Drone pystyy kuljettamaan paketin paikasta A paikkaan B, johon algoritmin toteuttaa ryhmästämme Juhani</p>
-			<p class="teksti">Dronelta voi pyytää tilauksen nettisivuiltamme pariin ennaltamääritettyyn paikkaan, jonka toteuttaa Jokke</p>
+			<p class="teksti">Projektissa algoritmin kielenä on käytetty python, jonka lisänä on käytetty serial ja time kirjastoja</p>
+			<p class="teksti">Nettisivuun on käytetty Flask, Gunicorn ja serverinä on Nginx</p>
+			<p class="teksti">Dronen paketinkuljetusta varten suunniteltu alusta on tehty Tinkercad ja Sketchup ohjelmilla</p>
+			<p class="teksti">Koko paketti pyörii Raspberry Pi:llä ja dronena toimii Ryze Tello EDU Powered by DJI</p>
 		</center>
 	</div>
-	<div class="video">
+</div>
+<div class="video">
+	<center>
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/gj-tMMi6dys">
 		</iframe>
-	</div>
+	</center>
 </div>
 {% endblock %}
 
