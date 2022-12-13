@@ -58,6 +58,10 @@ def emergency():
 def about():
     return render_template("projektista.html")
 
+@app.route("/group")
+def group():
+    return render_template("group.html")
+
 # Palvelimen käynnistys :
 # sudo systemctl restart nginx , jos muokannut nginx asetuksia
 # html kansion sisällä sudo gunicorn --workers 5 wsgi:app

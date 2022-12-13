@@ -12,32 +12,21 @@
 	<div class="content">
 		<nav class="navMenu">
 			<a href="/">Home</a>
-			<a href="#">Test</a>
-			<a href="#">About</a>
-			<a href="#">Group</a>
+			<a href="/about">About</a>
+			<a href="/group">Group</a>
 			<div class="dot"></div>
 		</nav>
-
-		<!--
-		<div class="topnav">
-			<a class="active" href="/">Home</a>
-			<a href="/about">About</a>
-			--!>
-			<!--
-	      		<a href="#Kirjaudu">Kirjaudu</a>
-	      		<a href="#Rekisteröidy">Rekisteröidy</a>
-			--!>
-				
 	    	</div>
 		{% block content %}   
 	    	<div class="titteli">
 			<center>
-	      			<h2>DroneBerry</h2>
-				<h3>Kuljettaa paketin kuin paketin luoksesi</h3>
+	      			<h1 class="headerteksti">DroneBerry</h1>
+				<p class="indexteksti">Kuljettaa paketin kuin paketin luoksesi</p>
 			</center>
 	    	</div>
-		
+		<!--
 	    	<center>
+		--!>
 		<!--	<form action="http://193.167.101.43:8080" method="POST" enctype="application/x-www-form-urlencoded">
 		  		<p>
 		    			<label for="a">Etunimi</label>
@@ -76,8 +65,9 @@
 			<input type=file name=file>
 			<button class="submitti" type=submit style="vertical-align:middle"><span>Upload!</span></button>
 			<!--<input class="submitti" type=submit value=Upload>--!>
+	   	<!--
 		</form>
-
+		--!>
 		<form action="http://193.167.101.43/script" method="POST">
 			<button class="submitti" type=submit style="vertical-align:middle"><span>Tilaa Kuljetus!</span></button>
 			<!--<input type="submit" value="Tilaa Kuljetus">--!>
@@ -86,6 +76,10 @@
 			<button class="submitti" type=submit style="vertical-align:middle"><span>HÄTÄSEIS</span></button>
 			<!--<input type="submit" value="HÄTÄSEIS!">--!>
 		</form>
+
+		<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/gj-tMMi6dys">
+		</iframe> 
 		{% endblock %}
 		<!--
 		<footer class="footer">
