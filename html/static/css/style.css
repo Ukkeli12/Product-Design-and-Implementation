@@ -127,12 +127,10 @@ body {
 }
 
 .topnav {
-	
 	left: 50%;
       	overflow: hidden;
       	background-color: #E84545;
 }
- 
 
 .topnav a {
       	float: left;
@@ -192,14 +190,6 @@ body {
 	font-size: 55px;
 }
 
-.tyhjavali{
-	position:relative;
-	top: 60px;
+.video{
+	position: relative;
 }
- 
-/*
-form  { display: table;      }
-p     { display: table-row;  }
-label { display: table-cell; font-size: 25px; }
-input { display: table-cell; }
-*/
