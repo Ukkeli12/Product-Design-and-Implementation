@@ -26,13 +26,13 @@ ar = np.array([
     [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,e,p,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,e,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
@@ -168,34 +168,36 @@ def walker(j,k,counter,lista):
                     break
             if flag == 1:
                 break
+# def getCurrentLocation():
+
 
 def teppo(coordinates):
-    # tello = Tello()
+    tello = Tello()
 
-    # tello.connect()
-    # tello.takeoff()
+    tello.connect()
+    tello.takeoff()
 
-    # tello.set_speed(20)
+    tello.set_speed(50)
     for i in coordinates:
         if i[0] != 0:
             vec = i[0]*10
             if i[2] == 1:
                 print("move_right   ",vec)
-                # tello.move_right(vec)
+                tello.move_right(vec)
             if i[2] == -1:
                 print("move_left    ",vec*-1)
-                # tello.move_left(vec)
+                tello.move_left(vec)
         else:
             vec = i[1]*10
             if i[2] == 1:
                 print("move_forward ",vec)
-                # tello.move_forward(vec)
+                tello.move_forward(vec)
             if i[2] == -1:
                 print("move_back    ",vec*-1)
-                # tello.move_back(vec)
+                tello.move_back(vec)
     print("===================")
 
-    # tello.land()
+    tello.land()
 
 def main():
     # print(ar)

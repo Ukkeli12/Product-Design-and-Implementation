@@ -1,11 +1,12 @@
-import keyboard,json
+# import keyboard
+import json
 
 from time import sleep #Viive jos tarvitaan
 from serial import Serial #Sarjaportti kirjasto
 from redis import Redis #Redis kirjasto raspberry pi:lle
 
 r = Redis(host='localhost', port=6379, db=0)
-ser = Serial('COM14',115200) #Sarjaportin määrittäminen
+ser = Serial('/dev/ttyACM3',115200) #Sarjaportin määrittäminen
 
 def lue_komentoja_tulostus(): #Tulostaa sarjaporttiin
     ser.write('\r\r'.encode())
@@ -13,7 +14,7 @@ def lue_komentoja_tulostus(): #Tulostaa sarjaporttiin
     ser.write('lec\r'.encode()) #Komento joka aloittaa komentojen lähettämisen
     sleep(1)
     
-    while keyboard.is_pressed('q') != True: #Sulkee ohjelman tulostuksen Q painikkeella
+    while (True ):#keyboard.is_pressed('q') != True: #Sulkee ohjelman tulostuksen Q painikkeella
         data = ser.readline() #Tiedon tallentaminen sarjaportista seuraavaan rivin vaihtoon asti
         if(data):
             print(data)
@@ -40,7 +41,7 @@ def sulje_komento_sulje_sarjaportti(): #Sulkee sarjaportin
     sleep(1)
     ser.close()
 
-if __name__ == '__main__':
+def dmain():
     sleep(1)
     while 1:
         tieto = str(input("Kirjoita komento ja paina enter:\n1 Tulostus päälle\n2 Sulje sarjaportti yhteys\nHUOM! Paina Q halutessasi sulkea sarjaportti tulostuksen\n"))
@@ -49,3 +50,5 @@ if __name__ == '__main__':
         elif tieto == "2":
             sulje_komento_sulje_sarjaportti()
             break
+if __name__ == '__main__':
+    dmain()
