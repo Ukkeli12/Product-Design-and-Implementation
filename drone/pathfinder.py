@@ -1,6 +1,6 @@
 from djitellopy import Tello
 import numpy as np
-import matplotlib.pylab as plt
+#import matplotlib.pylab as plt
 
 np.set_printoptions(threshold=np.inf)
 H = -99
@@ -229,12 +229,12 @@ def dain(x,y):
             break
 
     print(ej,ek)
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    ax.set_aspect('equal')
-    plt.imshow(ar, interpolation='nearest', cmap=plt.cm.ocean)
+    #fig = plt.figure()
+    #ax = fig.add_subplot(1,1,1)
+    #ax.set_aspect('equal')
+    #plt.imshow(ar, interpolation='nearest', cmap=plt.cm.ocean)
     # plt.colorbar()
-    plt.show()
+    #plt.show()
     coordinates = walker(sj,sk,acCounter,adjacentCells)
 
     print(ej,ek)
@@ -244,12 +244,14 @@ def dain(x,y):
 
     # teppo(coords)
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    ax.set_aspect('equal')
-    plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
+    return 0
+
+    #fig = plt.figure()
+    #ax = fig.add_subplot(1,1,1)
+    #ax.set_aspect('equal')
+    #plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
     # plt.colorbar()
-    plt.show()
+    #plt.show()
 
 # def main():
     # # dain(0,0)
