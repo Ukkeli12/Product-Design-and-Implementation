@@ -32,7 +32,7 @@ ar = np.array([
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,e,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
     [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
@@ -199,12 +199,20 @@ def teppo(coordinates):
 
     tello.land()
 
-def main():
+def dain(x,y):
     # print(ar)
     # print()
     acCounter = 1;
     sj,sk,ej,ek = getStartAndEnd()
+    print(ej,ek)
+    if x and y != 0:
+        ar2[ej,ek] = 0
+        ej,ek = x,y
+        print(ej,ek)
+        ar2[x,y] = 7
+    print(ej,ek)
     adjacentCells = [(ej,ek,acCounter)]
+    print(ej,ek)
     flag = 0
     while(True):
         for i in adjacentCells:
@@ -220,13 +228,21 @@ def main():
         if flag == 1:
             break
 
+    print(ej,ek)
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.set_aspect('equal')
+    plt.imshow(ar, interpolation='nearest', cmap=plt.cm.ocean)
+    # plt.colorbar()
+    plt.show()
     coordinates = walker(sj,sk,acCounter,adjacentCells)
 
+    print(ej,ek)
     coords = getVectors(sj,sk,ej,ek,coordinates)
     # print()
     # print(coords)
 
-    teppo(coords)
+    # teppo(coords)
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
@@ -235,6 +251,9 @@ def main():
     # plt.colorbar()
     plt.show()
 
-if __name__ == main():
-    main()
-    
+# def main():
+    # # dain(0,0)
+    # dain(20,58)
+
+# if __name__ == main():
+    # main()
