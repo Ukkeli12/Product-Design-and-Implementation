@@ -5,6 +5,11 @@ from werkzeug.utils import secure_filename
 import os
 import requests
 from djitellopy import Tello
+import sys
+
+sys.path.insert(1, "/var/www/html/Product-Design-and-Implementation/drone")
+
+import pathfinder
 
 UPLOAD_FOLDER = 'images/'
 ALLOWED_EXTENSIONS = {'ico', 'jpg', 'png', 'jpeg', 'pdf', 'gif'}
@@ -18,15 +23,20 @@ def allowed_file(filename):
             filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def parser(x):
-    tello = Tello()
-    tello.connect()
+    #for y in x:
+    #    print(y)
+    #pathfinder.dain(30,58)
+    pathfinder.dain(x[1],x[2])
+
+    #tello = Tello()
+    #tello.connect()
     #tello.takeoff()
-    print(x)
-    tello.takeoff()
-    if (x == 'takeoff'):
-        tello.takeoff()
-    if (b'emergency' in x):
-        tello.emergency()
+    #print(x)
+    #tello.takeoff()
+    #if (x == 'takeoff'):
+    #    tello.takeoff()
+    #if (b'emergency' in x):
+    #    tello.emergency()
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -79,12 +89,17 @@ def tilaus():
     paikka = request.form.getlist('options')
     print(paikka[0])
     if paikka[0] == 'A':
-        paikka.append((2,5))
+        paikka.append(30)
+        paikka.append(58)
         paikka[0] = 'takeoff'
         #print(paikka[0])
         #print(paikka[1])
-        parser(paikka[0])
+        parser(paikka)
         # pathfinder(paikka[1])
+    elif paikka[0] == 'B':
+        paikka.append(17)
+        paikka.append(28)
+        parser(paikka)
     return render_template("index.html")
 
 # Palvelimen käynnistys :
