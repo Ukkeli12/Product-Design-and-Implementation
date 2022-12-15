@@ -82,10 +82,10 @@ def getVectors(sj,sk,ej,ek,coordinates):
     xflag, yflag = 0,0
     counter = 0
     for i in coordinates:
-        # print(i)
-        # print((ej,ek))
+        #print(i)
+        #print((ej,ek))
         counter += 1
-        # print(i)
+        #print(i)
         x1,y1 = i[0],i[1]
         if x1 == x2:
             jvec += 1
@@ -223,16 +223,16 @@ def main():
     coordinates = walker(sj,sk,acCounter,adjacentCells)
 
     coords = getVectors(sj,sk,ej,ek,coordinates)
-    # print()
-    # print(coords)
+    #print()
+    #print(coords)
 
-    teppo(coords)
+    #teppo(coords)
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
     ax.set_aspect('equal')
     plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
-    # plt.colorbar()
+    #plt.colorbar()
     plt.show()
 
 if __name__ == main():

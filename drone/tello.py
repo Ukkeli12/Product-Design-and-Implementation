@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-import json
+import json,logging
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import logging
 from djitellopy import Tello
 
 class S(BaseHTTPRequestHandler):
