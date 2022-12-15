@@ -1,6 +1,7 @@
 from djitellopy import Tello
 import numpy as np
 import matplotlib.pylab as plt
+import ../tracker/readtracker
 
 np.set_printoptions(threshold=np.inf)
 H = -99
@@ -168,7 +169,7 @@ def walker(j,k,counter,lista):
                     break
             if flag == 1:
                 break
-# def getCurrentLocation():
+def getCurrentLocation():
 
 
 def teppo(coordinates):
@@ -236,5 +237,6 @@ def main():
     plt.show()
 
 if __name__ == main():
-    main()
+    # main()
+
     
