@@ -4,6 +4,7 @@ from flask import render_template
 from werkzeug.utils import secure_filename
 import os
 import requests
+from djitellopy import Tello
 
 UPLOAD_FOLDER = 'images/'
 ALLOWED_EXTENSIONS = {'ico', 'jpg', 'png', 'jpeg', 'pdf', 'gif'}
@@ -15,6 +16,17 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and \
             filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def parser(x):
+    tello = Tello()
+    tello.connect()
+    #tello.takeoff()
+    print(x)
+    tello.takeoff()
+    if (x == 'takeoff'):
+        tello.takeoff()
+    if (b'emergency' in x):
+        tello.emergency()
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -68,7 +80,10 @@ def tilaus():
     print(paikka[0])
     if paikka[0] == 'A':
         paikka.append((2,5))
-        print(paikka[1])
+        paikka[0] = 'takeoff'
+        #print(paikka[0])
+        #print(paikka[1])
+        parser(paikka[0])
         # pathfinder(paikka[1])
     return render_template("index.html")
 
