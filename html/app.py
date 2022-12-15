@@ -2,7 +2,6 @@ from flask import Flask, request, flash, redirect, url_for
 from flask import render_template
 
 from werkzeug.utils import secure_filename
-
 import os
 import requests
 
