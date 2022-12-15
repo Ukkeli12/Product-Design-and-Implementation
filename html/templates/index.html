@@ -73,6 +73,16 @@
 			<button class="submitti" type=submit style="vertical-align:middle"><span>Tilaa Kuljetus!</span></button>
 			<!--<input type="submit" value="Tilaa Kuljetus">--!>
 		</form>
+
+		<form action="http://193.167.101.43/tilaus" id="tilaus"  method="POST">
+			<label for ="options">Valitse minne haluat kuljetuksen :</label>
+			<select id="options" name="options">
+				<option value="A">Paikka A</option>
+				<option value="B">Paikka B</option>
+				<option value="C">Paikka C</option>
+			</select>
+			<button type="submit" class="submitti" style="vertical-align:middle"><span>nappi</span></button>
+		</form>
 		<form action="http://193.167.101.43/emergency" method="POST">
 			<button class="submitti" type=submit style="vertical-align:middle"><span>HÄTÄSEIS</span></button>
 			<!--<input type="submit" value="HÄTÄSEIS!">--!>
@@ -80,7 +90,5 @@
 		</center>
 		{% endblock %}
 	</div>
-
-
 </body>
 </html> 

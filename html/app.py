@@ -60,7 +60,18 @@ def about():
 
 @app.route("/group")
 def group():
-    return render_template("group.html")
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'murmu.png')
+    return render_template("group.html", mursu_image = full_filename)
+
+@app.route("/tilaus", methods=["GET","POST"])
+def tilaus():
+    paikka = request.form.getlist('options')
+    print(paikka[0])
+    if paikka[0] == 'A':
+        paikka.append((2,5))
+        print(paikka[1])
+        # pathfinder(paikka[1])
+    return render_template("index.html")
 
 # Palvelimen käynnistys :
 # sudo systemctl restart nginx , jos muokannut nginx asetuksia
