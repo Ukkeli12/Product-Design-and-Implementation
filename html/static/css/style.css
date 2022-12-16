@@ -195,16 +195,51 @@ body {
 	top: 55px;
 }
 
+/*
 select {
-	border: 0 !important; 
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: #0088cc 
-	width: 100px;
-	text-indent: 0.01px;
-	text-overflow: "";
-	color: #FFF;
-	border-radius: 15px;
-	padding: 5px;
-	box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+	-ms-appearance: none;
+	appearance: none;
+	outline: 0;
+	background-color: #c7053d;
+	background-image: none;
+	border: 1px solid black;
 }
+
+.select {
+	position: relative;
+	display: block;
+	width: 20em;
+	height: 3em;
+	line-height: 3;
+	background: #FFFFFF;
+	overflow: hidden;
+	border-radius: .25em;
+}
+
+select::ms-expand {
+	display: none;
+}
+
+.select::after {
+	content: '\25BC';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 lem;
+	background: #34495E;
+	pointer-events: none;
+}
+
+.select:hover::after {
+	color: #F39C12;
+}
+
+.select::after {
+	-webkit-transition: .25s all ease;
+	-o-transition: .25s all ease;
+	transition: .25s all ease;
+}
+*/

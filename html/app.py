@@ -1,5 +1,10 @@
 from flask import Flask, request, flash, redirect, url_for
 from flask import render_template
+#import flask_wtf
+
+from flask_wtf import FlaskForm
+from wtforms import SelectField
+#from wtforms import StringField
 
 from werkzeug.utils import secure_filename
 import os
@@ -11,12 +16,19 @@ sys.path.insert(1, "/var/www/html/Product-Design-and-Implementation/drone")
 
 import pathfinder
 
+
 UPLOAD_FOLDER = 'images/'
 ALLOWED_EXTENSIONS = {'ico', 'jpg', 'png', 'jpeg', 'pdf', 'gif'}
+SECRET_KEY = os.urandom(32)
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SECRET_KEY'] = SECRET_KEY
 # @app.route("/", methods=["GET","POST"]) 
+
+class kuljetusForm(FlaskForm):
+    #SelectField
+    language = SelectField(u'Testing form', choices=[('cpp','C++'), ('py', 'Python')])
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -41,6 +53,7 @@ def parser(x):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    form = kuljetusForm()
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
@@ -54,7 +67,7 @@ def index():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             #return redirect(url_for('download_file', name=filename))
             return redirect(request.url)
-    return render_template("index.html")
+    return render_template("index.html", form=form)
 
 
 @app.route("/script", methods=["GET","POST"])
@@ -104,7 +117,8 @@ def tilaus():
 
 # Palvelimen käynnistys :
 # sudo systemctl restart nginx , jos muokannut nginx asetuksia
-# html kansion sisällä sudo gunicorn --workers 5 wsgi:app
+# productdesign kansiossa venv päälle
+# html kansion sisällä gunicorn --workers 5 wsgi:app
 # screen päälle ja Ctrl+A+C, vaihda ikkuna = Ctrl+A+A
 # sitten drone kansioon ja python tello.py 8080 
 #
