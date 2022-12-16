@@ -242,7 +242,7 @@ def dain(x,y):
     plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
     plt.axis('off')
     # plt.colorbar()
-    plt.savefig('asdf.png',bbox_inches='tight')
+    plt.savefig('../html/static/asdf.png',bbox_inches='tight')
 
     ar = np.copy(ar1)
     ar2 = np.copy(ar)
