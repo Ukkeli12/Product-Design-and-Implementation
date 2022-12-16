@@ -1,6 +1,6 @@
 from djitellopy import Tello
 import numpy as np
-#import matplotlib.pylab as plt
+import matplotlib.pylab as plt
 
 np.set_printoptions(threshold=np.inf)
 H = -99
@@ -8,7 +8,7 @@ e = 7
 s = 6
 p = -1
 
-ar = np.array([
+ar1 = np.array([
     [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
     [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
     [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
@@ -70,6 +70,7 @@ ar = np.array([
     [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
     [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H]
     ])
+ar = np.copy(ar1)
 ar2 = np.copy(ar)
 
 def getVectors(sj,sk,ej,ek,coordinates):
@@ -200,6 +201,8 @@ def teppo(coordinates):
     tello.land()
 
 def dain(x,y):
+    global ar
+    global ar2
     # print(ar)
     # print()
     acCounter = 1;
@@ -228,30 +231,21 @@ def dain(x,y):
         if flag == 1:
             break
 
-    print(ej,ek)
-    #fig = plt.figure()
-    #ax = fig.add_subplot(1,1,1)
-    #ax.set_aspect('equal')
-    #plt.imshow(ar, interpolation='nearest', cmap=plt.cm.ocean)
-    # plt.colorbar()
-    #plt.show()
     coordinates = walker(sj,sk,acCounter,adjacentCells)
-
-    print(ej,ek)
     coords = getVectors(sj,sk,ej,ek,coordinates)
-    # print()
-    # print(coords)
 
     # teppo(coords)
 
-    return 0
-
-    #fig = plt.figure()
-    #ax = fig.add_subplot(1,1,1)
-    #ax.set_aspect('equal')
-    #plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.set_aspect('equal')
+    plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
+    plt.axis('off')
     # plt.colorbar()
-    #plt.show()
+    plt.savefig('asdf.png',bbox_inches='tight')
+
+    ar = np.copy(ar1)
+    ar2 = np.copy(ar)
 
 # def main():
     # # dain(0,0)
