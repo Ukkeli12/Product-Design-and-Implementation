@@ -113,6 +113,10 @@ def tilaus():
         paikka.append(17)
         paikka.append(28)
         parser(paikka)
+    elif paikka[0] == 'C':
+        paikka.append(33)
+        paikka.append(55)
+        parser(paikka)
     return render_template("index.html")
 
 # Palvelimen käynnistys :
