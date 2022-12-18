@@ -89,13 +89,13 @@ def getVectors(sj,sk,ej,ek,coordinates):
             jvec += 1
             xflag = 1
             direction = y1-y2
-            # print(y1-y2," jvec: ",jvec," x,y ",x1,y1," ",i)
+            print(y1-y2," jvec: ",jvec," x,y ",x1,y1," ",i)
             oldi = i
         elif y1 == y2 and xflag == 0:
             kvec += 1
             yflag = 1
             direction = x2-x1
-            # print(x2-x1," kvec: ",kvec," x,y ", x1,y1," ",i)
+            print(x2-x1," kvec: ",kvec," x,y ", x1,y1," ",i)
             oldi = i
         else:
             if (xflag or yflag == 1):
@@ -108,7 +108,6 @@ def getVectors(sj,sk,ej,ek,coordinates):
                 yflag = 0
         x2,y2 = i[0],i[1]
 
-    # print(counter)
     return(vectorList)
 
 def checkAdjacentCells(tempAdjacentCells,counter):
@@ -145,9 +144,10 @@ def getStartAndEnd():
     return sj,sk,ej,ek
 
 def walker(j,k,counter,lista):
+    walkable = []
+    walkable.append((j,k))
     sj = j - 1
     sk = k - 1
-    walkable = []
     while(True):
         flag = 0
         for i in range(3):
@@ -173,15 +173,20 @@ def getCurrentLocation():
     asd = [54,71]
     return asd
 
+def teppoFlyBack(coordinates):
+    reversedCoords = []
+    coordinates.reverse()
+    for i in coordinates:
+        reversedCoords.append([i[0],i[1],i[2]*-1])
+
+    print(reversedCoords)
+    teppo(reversedCoords)
+
 def teppo(coordinates):
     # tello = Tello()
 
     # tello.connect()
     # tello.takeoff()
-
-    currentLocation = getCurrentLocation()
-    print(currentLocation)
-
 
     # tello.set_speed(50)
     for i in coordinates:
@@ -212,6 +217,7 @@ def dain(x,y):
     # print()
     acCounter = 1;
     sj,sk,ej,ek = getStartAndEnd()
+    ar2[sj,sk] = 100
     if x and y != 0:
         ar2[ej,ek] = 0
         ej,ek = x,y
@@ -242,6 +248,8 @@ def dain(x,y):
     print(coords)
 
     teppo(coords)
+
+    teppoFlyBack(coords)#,sj,sk,ej,ek)
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
