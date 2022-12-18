@@ -83,28 +83,26 @@ def getVectors(sj,sk,ej,ek,coordinates):
     xflag, yflag = 0,0
     counter = 0
     for i in coordinates:
-        # print(i)
-        # print((ej,ek))
         counter += 1
-        # print(i)
         x1,y1 = i[0],i[1]
-        if x1 == x2:
+        if x1 == x2 and yflag == 0:
             jvec += 1
             xflag = 1
             direction = y1-y2
-            print(y1-y2," jvec: ", jvec, " x,y ", x1,y1)
-        elif y1 == y2:
-            # print(x2-x1)
+            # print(y1-y2," jvec: ",jvec," x,y ",x1,y1," ",i)
+            oldi = i
+        elif y1 == y2 and xflag == 0:
             kvec += 1
             yflag = 1
             direction = x2-x1
-            print(x2-x1," kvec: ", kvec, " x,y ", x1,y1)
+            # print(x2-x1," kvec: ",kvec," x,y ", x1,y1," ",i)
+            oldi = i
         else:
             if (xflag or yflag == 1):
                 print("===================")
                 # jvec = jvec * (y1-y2)
                 # kvec = kvec * (x2-x1)
-                vectorList.append((jvec,kvec,direction))
+                vectorList.append((jvec,kvec,direction,oldi))
                 jvec,kvec = 0,0
                 xflag = 0
                 yflag = 0
@@ -120,6 +118,11 @@ def checkAdjacentCells(tempAdjacentCells,counter):
         k = a[1] - 1
         for i in range(3):
             for n in range(3):
+                if (i == 0 and n == 0) or (i == 2 and n == 0):
+                    continue
+                if (i == 0 and n == 2) or (i == 2 and n == 2):
+                    continue
+                # print(i,n)
                 if ar[j+i,k+n] == 0:
                     if (j+i,k+n,counter) not in tempAdjacentCells or adjacentCells:
                         ar[j+i,k+n] = str(counter)
@@ -152,14 +155,11 @@ def walker(j,k,counter,lista):
                 if ar[sj+i,sk+n] == counter - 1:
                     if ar2[sj+i,sk+n] == 7:
                         ar2[sj+i,sk+n] = 100
-                        # print(ar)
-                        # print()
-                        # print(ar2)
-                        # print(walkable)
+                        sj,sk = sj+i,sk+n
+                        walkable.append((sj,sk))
                         return walkable
                     counter -= 1
                     sj,sk = sj+i,sk+n
-                    # ar2[sj,sk] = counter
                     walkable.append((sj,sk))
                     ar2[sj,sk] = 100
                     flag = 1
@@ -169,36 +169,41 @@ def walker(j,k,counter,lista):
                     break
             if flag == 1:
                 break
-# def getCurrentLocation():
-
+def getCurrentLocation():
+    asd = [54,71]
+    return asd
 
 def teppo(coordinates):
-    tello = Tello()
+    # tello = Tello()
 
-    tello.connect()
-    tello.takeoff()
+    # tello.connect()
+    # tello.takeoff()
 
-    tello.set_speed(50)
+    currentLocation = getCurrentLocation()
+    print(currentLocation)
+
+
+    # tello.set_speed(50)
     for i in coordinates:
         if i[0] != 0:
             vec = i[0]*10
             if i[2] == 1:
                 print("move_right   ",vec)
-                tello.move_right(vec)
+                # tello.move_right(vec)
             if i[2] == -1:
                 print("move_left    ",vec*-1)
-                tello.move_left(vec)
+                # tello.move_left(vec)
         else:
             vec = i[1]*10
             if i[2] == 1:
                 print("move_forward ",vec)
-                tello.move_forward(vec)
+                # tello.move_forward(vec)
             if i[2] == -1:
                 print("move_back    ",vec*-1)
-                tello.move_back(vec)
+                # tello.move_back(vec)
     print("===================")
 
-    tello.land()
+    # tello.land()
 
 def dain(x,y):
     global ar
@@ -207,12 +212,11 @@ def dain(x,y):
     # print()
     acCounter = 1;
     sj,sk,ej,ek = getStartAndEnd()
-    print(ej,ek)
     if x and y != 0:
         ar2[ej,ek] = 0
         ej,ek = x,y
-        print(ej,ek)
         ar2[x,y] = 7
+    print(sj,sk)
     print(ej,ek)
     adjacentCells = [(ej,ek,acCounter)]
     print(ej,ek)
@@ -234,7 +238,10 @@ def dain(x,y):
     coordinates = walker(sj,sk,acCounter,adjacentCells)
     coords = getVectors(sj,sk,ej,ek,coordinates)
 
-    # teppo(coords)
+    print()
+    print(coords)
+
+    teppo(coords)
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
@@ -242,7 +249,8 @@ def dain(x,y):
     plt.imshow(ar2, interpolation='nearest', cmap=plt.cm.ocean)
     plt.axis('off')
     # plt.colorbar()
-    plt.savefig('../html/static/asdf.png',bbox_inches='tight')
+    # plt.savefig('asdf.png',bbox_inches='tight')
+    plt.show()
 
     ar = np.copy(ar1)
     ar2 = np.copy(ar)
