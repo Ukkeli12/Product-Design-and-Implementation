@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='/css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <!--<link rel="shortcut icon" href="#" /> --!>
 </head>
 <body>     
 	<div class="content">
@@ -24,69 +23,25 @@
 				<p class="indexteksti">Kuljettaa paketin kuin paketin luoksesi</p>
 			</center>
 	    	</div>
-		<!--
-	    	<center>
-		--!>
-		<!--	<form action="http://193.167.101.43:8080" method="POST" enctype="application/x-www-form-urlencoded">
-		  		<p>
-		    			<label for="a">Etunimi</label>
-		    			<input id="a" type="text">
-		  		</p>
-		  		<p>
-		    			<label for="b">Sukunimi</label>
-		    			<input id="b" type="text">
-		  		</p>
-		   		<p>
-		    			<label for="b">Osoite</label>
-		    			<input id="b" type="text">
-		  		</p> 
-		  		<p>
-				        <select id="selCountry">
-						<option selected value="">Choose where to ship your product</option>
-						<option value="ShippingA">Shipping for A</option>
-						<option value="ShippingB">Shippinp for B</option>
-						<option value="ShippingC">Shipping for C</option>
-					</select>
 
-
-
-		    			<label for="b">Postinumero</label>
-		    			<input id="b" type="text"> 
-		  		</p>
-		  		<input type="submit" value="Subscribe!">
-			</form>
-	    	</center>
-		<div class="alapalkki">
-			<p>Tekijät: Petteri Karjalainen, Jokke Kivijärvi, Juhani Vuorenmaa ja Matti Polojärvi</p>
-		</div>
-		--!>
-		<!--
-		<form method="POST" enctype=multipart/form-data>
-			<input type=file name=file>
-			<button class="submitti" type=submit style="vertical-align:middle"><span>Upload!</span></button>
-			<!--<input class="submitti" type=submit value=Upload>--!>
-	   	<!--
-		</form>
-		--!>
 		<center>
-		<form action="http://193.167.101.43/script" method="POST">
-			<button class="submitti" type=submit style="vertical-align:middle"><span>Tilaa Kuljetus!</span></button>
-			<!--<input type="submit" value="Tilaa Kuljetus">--!>
-		</form>
-
 		<form action="http://193.167.101.43/tilaus" id="tilaus"  method="POST">
-			<label for ="options">Valitse minne haluat kuljetuksen :</label>
+			<label for ="options"></label>
 			<select id="options" name="options">
 				<option value="A">Paikka A</option>
 				<option value="B">Paikka B</option>
 				<option value="C">Paikka C</option>
 			</select>
-			<button type="submit" class="submitti" style="vertical-align:middle"><span>nappi</span></button>
+			<button type="submit" class="submitti" style="vertical-align:middle"><span>Tilaa</span></button>
 		</form>
+
 		<form action="http://193.167.101.43/emergency" method="POST">
 			<button class="submitti" type=submit style="vertical-align:middle"><span>HÄTÄSEIS</span></button>
 			<!--<input type="submit" value="HÄTÄSEIS!">--!>
 		</form>
+
+		<img src="{{ url_for('static', filename='asdf.png') }}"alt="Wanha Herra">
+
 		</center>
 		{% endblock %}
 	</div>
