@@ -1,5 +1,4 @@
 from app import app
-
 #class PrefixMiddleware(object):
 
 #       def __init__(self, app, prefix=''):

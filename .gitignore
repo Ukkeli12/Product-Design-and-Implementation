@@ -1,2 +1,5 @@
-venv
+venv/*
 /html/images/
+/html/__pycache__/
+/drone/__pycache__/
+/tracker/__pycache__/

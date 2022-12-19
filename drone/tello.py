@@ -30,11 +30,12 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
     logging.info('Stopping httpd...\n')
 
 def parse(x):
+    tello = Tello()
+    tello.connect()
     if (b'takeoff' in x):
-        tello = Tello()
-        tello.connect()
         tello.takeoff()
-        tello.land()
+    if (b'emergency' in x):
+        tello.emergency()
 
 if __name__ == '__main__':
     from sys import argv
