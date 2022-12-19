@@ -1,6 +1,7 @@
 from djitellopy import Tello
 import numpy as np
 import matplotlib.pylab as plt
+import time
 
 np.set_printoptions(threshold=np.inf)
 H = -99
@@ -112,7 +113,7 @@ def checkAdjacentCells(tempAdjacentCells,counter):
                     continue
                 if (i == 0 and n == 2) or (i == 2 and n == 2):
                     continue
-                print(i,n)
+                # print(i,n)
                 if ar[j+i,k+n] == 0:
                     if (j+i,k+n,counter) not in tempAdjacentCells or adjacentCells:
                         ar[j+i,k+n] = str(counter)
@@ -161,9 +162,6 @@ def walker(j,k,counter,lista):
                     break
             if flag == 1:
                 break
-def getCurrentLocation():
-    asd = [54,71]
-    return asd
 
 def teppoFlyBack(coordinates):
     reversedCoords = []
@@ -179,9 +177,11 @@ def teppoFlyBack(coordinates):
             ])
 
     print(reversedCoords)
+    time.sleep(10)
     teppo(reversedCoords)
 
 def teppo(coordinates):
+
     tello = Tello()
 
     tello.connect()
@@ -222,10 +222,10 @@ def dain(x,y):
         ar2[ej,ek] = 0
         ej,ek = x,y
         ar2[x,y] = 7
-    print(sj,sk)
-    print(ej,ek)
+    # print(sj,sk)
+    # print(ej,ek)
     adjacentCells = [(ej,ek,acCounter)]
-    print("afterAdjacentCells()")
+    # print("afterAdjacentCells()")
     # print(ej,ek)
     flag = 0
     while(True):
@@ -241,17 +241,18 @@ def dain(x,y):
             acCounter += 1
         if flag == 1:
             break
-    print("beforeWalker")
+    # print("beforeWalker")
 
     coordinates = walker(sj,sk,acCounter,adjacentCells)
     coords = getVectors(sj,sk,ej,ek,coordinates)
 
     print()
     print(coords)
-
+    
     teppo(coords)
 
     teppoFlyBack(coords)#,sj,sk,ej,ek)
+
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
