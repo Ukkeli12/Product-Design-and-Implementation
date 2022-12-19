@@ -9,66 +9,57 @@ s = 6
 p = -1
 
 ar1 = np.array([
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
-    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H]
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,0,0,0,0,0,0,0,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,0,0,0,0,0,0,0,p,p,p,H,H],
+    [H,H,p,p,p,e,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,s,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,H,H,H,H,H,H,H,H,H,H,H,H,H,H,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,p,p,p,0,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,0,p,p,p,H,H],
+    [H,H,p,p,p,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
+    [H,H,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
+    [H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H],
     ])
 ar = np.copy(ar1)
 ar2 = np.copy(ar)
@@ -121,7 +112,7 @@ def checkAdjacentCells(tempAdjacentCells,counter):
                     continue
                 if (i == 0 and n == 2) or (i == 2 and n == 2):
                     continue
-                # print(i,n)
+                print(i,n)
                 if ar[j+i,k+n] == 0:
                     if (j+i,k+n,counter) not in tempAdjacentCells or adjacentCells:
                         ar[j+i,k+n] = str(counter)
@@ -131,6 +122,7 @@ def checkAdjacentCells(tempAdjacentCells,counter):
 
 def getStartAndEnd():
     asdf = ar.shape
+    print(asdf)
     x,y = asdf[0],asdf[1]
     sj,sk,ej,ek = 0,0,0,0
     for i in range(x):
@@ -175,40 +167,47 @@ def getCurrentLocation():
 
 def teppoFlyBack(coordinates):
     reversedCoords = []
+    cc = coordinates.copy()
     coordinates.reverse()
-    for i in coordinates:
-        reversedCoords.append([i[0],i[1],i[2]*-1])
+    for i in range(len(coordinates)):
+        print(i)
+        reversedCoords.append([
+            coordinates[i][0],
+            coordinates[i][1],
+            coordinates[i][2]*-1,
+            cc[i][3]
+            ])
 
     print(reversedCoords)
     teppo(reversedCoords)
 
 def teppo(coordinates):
-    # tello = Tello()
+    tello = Tello()
 
-    # tello.connect()
-    # tello.takeoff()
+    tello.connect()
+    tello.takeoff()
 
-    # tello.set_speed(50)
+    tello.set_speed(50)
     for i in coordinates:
         if i[0] != 0:
             vec = i[0]*10
             if i[2] == 1:
                 print("move_right   ",vec)
-                # tello.move_right(vec)
+                tello.move_right(vec)
             if i[2] == -1:
                 print("move_left    ",vec*-1)
-                # tello.move_left(vec)
+                tello.move_left(vec)
         else:
             vec = i[1]*10
             if i[2] == 1:
                 print("move_forward ",vec)
-                # tello.move_forward(vec)
+                tello.move_forward(vec)
             if i[2] == -1:
                 print("move_back    ",vec*-1)
-                # tello.move_back(vec)
+                tello.move_back(vec)
     print("===================")
 
-    # tello.land()
+    tello.land()
 
 def dain(x,y):
     global ar
@@ -217,6 +216,7 @@ def dain(x,y):
     # print()
     acCounter = 1;
     sj,sk,ej,ek = getStartAndEnd()
+    print("afterGetStartAndEnd()")
     ar2[sj,sk] = 100
     if x and y != 0:
         ar2[ej,ek] = 0
@@ -225,7 +225,8 @@ def dain(x,y):
     print(sj,sk)
     print(ej,ek)
     adjacentCells = [(ej,ek,acCounter)]
-    print(ej,ek)
+    print("afterAdjacentCells()")
+    # print(ej,ek)
     flag = 0
     while(True):
         for i in adjacentCells:
@@ -240,6 +241,7 @@ def dain(x,y):
             acCounter += 1
         if flag == 1:
             break
+    print("beforeWalker")
 
     coordinates = walker(sj,sk,acCounter,adjacentCells)
     coords = getVectors(sj,sk,ej,ek,coordinates)
